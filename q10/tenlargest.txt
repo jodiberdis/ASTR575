@@ -1,0 +1,12 @@
+$ du * -h | sort -n -r | head -10 > /home/users/berdis/tenlargest.txt
+
+1020K	rthamilt/OldPython/Python-2.7.1/lib/python2.7/site-packages/numpy/random
+1020K	mtpatter/kpnomarch2012/20120321/omn2.20877
+1020K	mtpatter/kpnomarch2012/20120321/omn2.20876
+1020K	mtpatter/kpnojan2012/20120122/omn3.17390.fits
+1016K	yslee/sspprun/calibration/hires/test/test/temp
+1016K	yslee/sspprun/calibration/hires/output_0114/ngs
+1016K	st/CODE/ANALYSIS_DMonly
+1016K	jasonj/mesa/star/test_suite/wd_o_ne_ignite/docs/.svn
+1016K	jasonj/mesa/star/test_suite/hb_2M/docs/.svn
+1012K	vigeesh/epd-7.1-2-rh5-x86_64/lib/python2.7/site-packages/twisted/protocols
