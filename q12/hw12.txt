@@ -1,0 +1,6 @@
+$ ln -s /home/apogee/speclib/linelists/linelist.20150714 linelist
+
+$ grep -v '^#' linelist | wc -l
+108032
+
+$ awk 'NR%100==0' linelist > 100thline.txt
