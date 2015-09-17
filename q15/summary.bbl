@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Perry et~al.(2015)Perry, Neumann, Phillips, Barnouin, Ernst, Kahan,
+  Solomon, Zuber, Smith, II et~al.}]{Perry15}
+Perry, M.~E., G.~A. Neumann, R.~J. Phillips, O.~S. Barnouin, C.~M. Ernst, D.~S.
+  Kahan, S.~C. Solomon, M.~T. Zuber, D.~E. Smith, S.~A.~Hauck II, et~al.
+  (2015), \enquote{The low-degree shape of mercury.} \emph{AGU Publications:
+  Geophysical Research Letters}, 42.
+\bibAnnoteFile{Perry15}
+
+\end{thebibliography}
