@@ -1,0 +1,97 @@
+/home/hyades/
+CPU info:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Pentium(R) CPU G2020 @ 2.90GHz
+stepping	: 9
+microcode	: 27
+cpu MHz		: 1600.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt tsc_deadline_timer xsave lahf_lm arat epb xsaveopt pln pts dts tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms
+bogomips	: 5788.76
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Pentium(R) CPU G2020 @ 2.90GHz
+stepping	: 9
+microcode	: 27
+cpu MHz		: 2900.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt tsc_deadline_timer xsave lahf_lm arat epb xsaveopt pln pts dts tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms
+bogomips	: 5788.76
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+Memory info:
+MemTotal:        5860064 kB
+MemFree:         4469848 kB
+Buffers:           69392 kB
+Cached:           439792 kB
+SwapCached:            0 kB
+Active:           671768 kB
+Inactive:         387796 kB
+Active(anon):     550936 kB
+Inactive(anon):    75108 kB
+Active(file):     120832 kB
+Inactive(file):   312688 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:      12287996 kB
+SwapFree:       12287996 kB
+Dirty:                 8 kB
+Writeback:             0 kB
+AnonPages:        550364 kB
+Mapped:            86596 kB
+Shmem:             75676 kB
+Slab:             215628 kB
+SReclaimable:     131208 kB
+SUnreclaim:        84420 kB
+KernelStack:        2696 kB
+PageTables:        28172 kB
+NFS_Unstable:        292 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    15218028 kB
+Committed_AS:    1557548 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      369012 kB
+VmallocChunk:   34359362112 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    319488 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:        8192 kB
+DirectMap2M:     6174720 kB
