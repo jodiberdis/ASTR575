@@ -24,7 +24,7 @@ main() {
   int fac_maxvar = 20;
   int sumfac = 0;
   int facvar = 0;
-  int count = 0
+  int count = 0;
 
 
   while (var <= maxvar) {
