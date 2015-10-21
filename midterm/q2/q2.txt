@@ -1,0 +1,6 @@
+a)
+$ mv file.txt file.txt.old
+
+b) mv *.txt *.txt.old
+
+Didn't get a chance to finish this one!
