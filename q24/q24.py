@@ -18,16 +18,19 @@ fig = plt.figure(figsize=(15,8))
 fig.subplots_adjust(wspace=0.4,hspace=0.4)
 colors=['red','blue','green']
 
-agestruct=[]
-metalstruct=[]
+addage=[]
+addmetal=[]
 
-
+#agestruct = isodata[where(isodata['Log_Age'] == inage)]
 for i in range(len(data)):
-    agestruct = agestruct + (data[i])[where(data[i]['Log_Age'] == 9)]
-    metalstruct = metalstruct + (data[i])[where(data[i]['Z'] == 0.0191)]
+    agestruct = data[i][where(data[i]['Log_Age'] == 9)]
+    metalstruct = data[i][where(data[i]['Z'] == 0.0191)]
     
-    print agestruct
-    print metalstruct
+    addage.append(agestruct)
+    addmetal.append(metalstruct)
+
+print addage
+print addmetal
 #    print 'stuff should be below this:'
 #    print where(data[i]['Z'] == 0.0191)
 
