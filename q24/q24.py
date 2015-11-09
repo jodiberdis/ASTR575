@@ -18,13 +18,20 @@ fig = plt.figure(figsize=(15,8))
 fig.subplots_adjust(wspace=0.4,hspace=0.4)
 colors=['red','blue','green']
 
-for i in range(len(data)):
-    agestruct = data[i][where(data[i]['Log_Age'] == 9)]
-    metalstruct = data[i][where(data[i]['Z'] == 0.02)]
+agestruct=[]
+metalstruct=[]
 
+
+for i in range(len(data)):
+    agestruct = agestruct + (data[i])[where(data[i]['Log_Age'] == 9)]
+    metalstruct = metalstruct + (data[i])[where(data[i]['Z'] == 0.0191)]
+    
     print agestruct
     print metalstruct
+#    print 'stuff should be below this:'
+#    print where(data[i]['Z'] == 0.0191)
 
+for i in range(len(data)):
 
     ax=fig.add_subplot(221)
     plt.scatter((agestruct['Log_Teff'])[i], (agestruct['Log_G'])[i],color=colors)
