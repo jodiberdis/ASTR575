@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 from pylab import *
 from astropy.io import ascii
+import matplotlib.patches as mpatches
+import math
 
 plt.clf()
 plt.cla()
@@ -26,27 +28,45 @@ for i in range(len(data)):
     agestruct = data[i][where(data[i]['Log_Age'] == 9)]
     metalstruct = data[i][where(data[i]['Z'] == 0.0191)]
     
-    addage.append(agestruct)
-    addmetal.append(metalstruct)
+#    addage.append(agestruct)
+#    addmetal.append(metalstruct)
 
-print addage
-print addmetal
+
+
+#print addmetal
 #    print 'stuff should be below this:'
 #    print where(data[i]['Z'] == 0.0191)
 
-for i in range(len(data)):
+#for i in range(len(data)):
 
     ax=fig.add_subplot(221)
-    plt.scatter((agestruct['Log_Teff'])[i], (agestruct['Log_G'])[i],color=colors)
+    plt.scatter((agestruct['Log_Teff']), (agestruct['Log_G']),color=colors)
+    plt.title('1 Gyr -- Effective Temperature vs. Surface Gravity')
+    plt.xlim(4.2,3.4)
+    plt.xlabel('log T_eff')
+    plt.ylabel('log G')
 
     ax=fig.add_subplot(223)
-    plt.scatter((agestruct['Log_Teff'])[i], (agestruct['m_bol'])[i],color=colors)
+    plt.scatter((agestruct['Log_Teff']), (agestruct['m_bol']),color=colors)
+    plt.title('1 Gyr -- Effective Temperature vs. Bolometric Magnitude')
+    plt.xlim(4.2,3.4)
+    plt.xlabel('log T_eff')
+    plt.ylabel('m_bol')
 
     ax=fig.add_subplot(222)
-    plt.scatter((metalstruct['Log_Teff'])[i], (metalstruct['Log_G'])[i],color=colors)
+    plt.scatter((metalstruct['Log_Teff']), (metalstruct['Log_G']), linewidth='0', c=metalstruct['Log_Age'],cmap='RdYlBu')
+    plt.title('Solar Metallicity -- T_eff vs. Surface Gravity')
+    plt.xlim(4.2,3.4)
+    plt.xlabel('log T_eff')
+    plt.ylabel('log G')
 
     ax=fig.add_subplot(224)
-    plt.scatter((metalstruct['Log_Teff'])[i], (metalstruct['m_bol'])[i],color=colors)
+    plt.scatter((metalstruct['Log_Teff']), (metalstruct['m_bol']), linewidth='0', c=metalstruct['Log_Age'],cmap='RdYlBu')
+    plt.title('1 Gyr -- T_eff vs. Bolometric Magnitude')
+    plt.xlim(4.2,3.4)
+    plt.xlabel('log T_eff')
+    plt.ylabel('m_bol')
+
 
 
 plt.savefig('hrdiagrams.png', bbox_inches='tight')
