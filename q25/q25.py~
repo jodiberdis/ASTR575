@@ -58,7 +58,7 @@ for i in range(len(binx)-1):
     dify = abs(biny[i] - biny[i+1])+1
     area = difx*dify
     binstar = numstars[i]/area
-    for j in range(difx + min([binx[i],binx[i+1]]):
+    for j in range(difx) + min([binx[i],binx[i+1]]):
         print j
             
      #forloop goes here i, xbin
