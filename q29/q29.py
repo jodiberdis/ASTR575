@@ -7,6 +7,7 @@ import numpy as np
 #    fx = (x**-2.35)
 #    return fx
 
+
 def anintegral(a, b):
     return ((b**-1.35)/-1.35) - ((a**-1.35)/-1.35)
     

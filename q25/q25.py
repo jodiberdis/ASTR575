@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from pylab import *
+import pyfits
 from astropy.io import ascii
 import matplotlib.patches as mpatches
 import math
@@ -17,7 +18,7 @@ agestruct = data[where(data['Log_Age'] == 9)]
 
 x = agestruct['Log_Teff']
 y = agestruct['Log_L']
-nbins = 625
+nbins = 10000
 
 xlen = int(np.sqrt(nbins))
 ylen = xlen
@@ -31,6 +32,7 @@ newy=[]
 binx=[]
 biny=[]
 numstars=[]
+totstars=np.zeros([xlen, ylen])
 
 for i in range(len(agestruct)-1):
     tem = abs(agestruct[i+1]['int_IMF'] - agestruct[i]['int_IMF'])
@@ -53,62 +55,23 @@ for i in range(xlen):
         if (y[k] >= newy[i]) and (y[k] <= newy[i+1]):
             biny.append(i)
 
-for i in range(len(binx)-1):
-    difx = abs(binx[i] - binx[i+1])+1
-    dify = abs(biny[i] - biny[i+1])+1
-    area = difx*dify
-    binstar = numstars[i]/area
-    for j in range(difx + min([binx[i],binx[i+1]]):
-        print j
-            
-     #forloop goes here i, xbin
-         #nest for goes here j, ybin
+for i in range(len(binx)-1):              # For each pair of points (in teff/lum data)
+    difbinx = abs(binx[i] - binx[i+1])+1  # difference between bins of two consecutive points
+    difbiny = abs(biny[i] - biny[i+1])+1
+    area = difbinx*difbiny                # area of difference in bins
+    binstar = numstars[i]/area            # number of stars in each bin
+#    print binstar
+#    for j in range(min(binx[i],binx[i+1]), max(binx[i],binx[i+1])):
+#        for k in range(min(biny[i],biny[i+1]), max(biny[i],biny[i+1])):
+#            totstars[j,k] = totstars[j,k] + binstar
+
+    for j in (np.arange(difbinx)+min([binx[i],binx[i+1]])):
+        for k in (np.arange(difbiny)+min([biny[i],biny[i+1]])):
+            totstars[j,k] = totstars[j,k] + binstar
 
 
+print totstars
 
+hdu = pyfits.PrimaryHDU(totstars)
+hdu.writeto('hess.fits')
 
-#fig = plt.figure(figsize=(15,8))
-#fig.subplots_adjust(wspace=0.4,hspace=0.4)
-#colors=['red','blue','green']
-
-
-#agestruct = isodata[where(isodata['Log_Age'] == inage)]
-#for i in range(len(data)):
-#    agestruct = data[i][where(data[i]['Log_Age'] == 9)]
-#    metalstruct = data[i][where(data[i]['Z'] == 0.0191)]
-    
-
-
-
-
-#    ax=fig.add_subplot(221)
-#    plt.scatter((agestruct['Log_Teff']), (agestruct['Log_G']),color=colors)
-#    plt.title('1 Gyr -- Effective Temperature vs. Surface Gravity')
-#    plt.xlim(4.2,3.4)
-#    plt.xlabel('log T_eff')
-#    plt.ylabel('log G')
-
-#    ax=fig.add_subplot(223)
-#    plt.scatter((agestruct['Log_Teff']), (agestruct['m_bol']),color=colors)
-#    plt.title('1 Gyr -- Effective Temperature vs. Bolometric Magnitude')
-#    plt.xlim(4.2,3.4)
-#    plt.xlabel('log T_eff')
-#    plt.ylabel('m_bol')
-
-#    ax=fig.add_subplot(222)
-#    plt.scatter((metalstruct['Log_Teff']), (metalstruct['Log_G']), linewidth='0', c=metalstruct['Log_Age'],cmap='RdYlBu')
-#    plt.title('Solar Metallicity -- T_eff vs. Surface Gravity')
-#    plt.xlim(4.2,3.4)
-#    plt.xlabel('log T_eff')
-#    plt.ylabel('log G')
-
-#    ax=fig.add_subplot(224)
-#    plt.scatter((metalstruct['Log_Teff']), (metalstruct['m_bol']), linewidth='0', c=metalstruct['Log_Age'],cmap='RdYlBu')
-#    plt.title('1 Gyr -- T_eff vs. Bolometric Magnitude')
-#    plt.xlim(4.2,3.4)
-#    plt.xlabel('log T_eff')
-#    plt.ylabel('m_bol')
-
-
-
-#plt.savefig('hrdiagrams.png', bbox_inches='tight')
